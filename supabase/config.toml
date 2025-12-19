@@ -1,0 +1,23 @@
+project_id = "heoteyiobtlykkwjwrrv"
+
+# Edge Functions Configuration
+# Explicitly require JWT authentication for all functions
+# This ensures unauthorized access is prevented
+
+[functions.generate-health-recommendations]
+verify_jwt = true
+
+[functions.health-voice-coach]
+verify_jwt = true
+
+[functions.extract-lab-results]
+verify_jwt = true
+
+[functions.voice-to-text]
+verify_jwt = true
+
+[functions.text-to-voice]
+verify_jwt = true
+
+[functions.health-coach-chat]
+verify_jwt = true

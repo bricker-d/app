@@ -1,0 +1,7 @@
+#!/bin/bash
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+EXTRA_SCHEME=()
+if ! printf '%s\n' "$@" | grep -q -- "-scheme"; then
+  EXTRA_SCHEME=(-scheme App)
+fi
+/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -derivedDataPath "$ROOT/DerivedData" "${EXTRA_SCHEME[@]}" "$@"
