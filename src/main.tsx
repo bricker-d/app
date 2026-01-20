@@ -1,3 +1,8 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./index.css";
+
 function showFatal(msg: string) {
   const el = document.createElement("pre");
   el.style.padding = "16px";
@@ -18,3 +23,9 @@ window.addEventListener("error", (e) => {
 window.addEventListener("unhandledrejection", (e: any) => {
   showFatal(String(e?.reason?.stack || e?.reason || e));
 });
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
